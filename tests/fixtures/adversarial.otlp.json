@@ -1,0 +1,51 @@
+{
+  "attribution": "Baysöz Labs <baysozlabs@proton.me>",
+  "resourceMetrics": [
+    {
+      "resource": {
+        "attributes": [
+          {"key": "service.name", "value": {"stringValue": "payments"}},
+          {"key": "deployment.environment", "value": {"stringValue": "prod"}}
+        ]
+      },
+      "scopeMetrics": [
+        {
+          "scope": {"name": "payments.instrumentation"},
+          "metrics": [
+            {
+              "name": "payment.duration",
+              "unit": "s",
+              "histogram": {
+                "aggregationTemporality": 2,
+                "dataPoints": [
+                  {
+                    "timeUnixNano": "1795651200000000000",
+                    "attributes": [
+                      {"key": "payment.method", "value": {"stringValue": "charge"}}
+                    ],
+                    "count": "3",
+                    "sum": 0.3,
+                    "explicitBounds": [0.1],
+                    "bucketCounts": [1, 2]
+                  }
+                ]
+              }
+            },
+            {
+              "name": "payment.count",
+              "unit": "1",
+              "sum": {
+                "aggregationTemporality": 2,
+                "isMonotonic": true,
+                "dataPoints": [
+                  {"timeUnixNano": "1795651200000000000", "asInt": "10"},
+                  {"timeUnixNano": "1795651260000000000", "asInt": "8"}
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

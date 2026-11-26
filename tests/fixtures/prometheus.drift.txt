@@ -1,0 +1,6 @@
+# Baysöz Labs <baysozlabs@proton.me> — adversarial Prometheus histogram fixture.
+# TYPE request_duration_seconds histogram
+request_duration_seconds_bucket{service="edge",le="0.2"} 2
+request_duration_seconds_bucket{service="edge",le="0.1"} 5
+request_duration_seconds_sum{service="edge"} 1.0
+request_duration_seconds_count{service="edge"} 5

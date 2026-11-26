@@ -1,0 +1,14 @@
+# Baysöz Labs <baysozlabs@proton.me> — baysoz-metriccanon ignore rules.
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.semgrep/
+build/
+dist/
+.coverage
+htmlcov/
+*.sarif
+.baseline.generated.json

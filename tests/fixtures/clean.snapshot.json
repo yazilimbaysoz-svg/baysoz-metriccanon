@@ -1,0 +1,47 @@
+{
+  "schema": "baysoz-metriccanon/v1",
+  "attribution": "Baysöz Labs <baysozlabs@proton.me>",
+  "service": {
+    "name": "checkout",
+    "attributes": {"deployment.environment": "prod"}
+  },
+  "points": [
+    {
+      "name": "http.server.request.duration",
+      "kind": "histogram",
+      "unit": "s",
+      "attributes": {"http.request.method": "GET", "http.response.status_code": 200},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "histogram": {"count": 4, "sum": 0.4, "bounds": [0.1, 0.5], "bucket_counts": [1, 2, 1]},
+      "exemplars": [
+        {"trace_id": "4bf92f3577b34da6a3ce929d0e0e4736", "span_id": "00f067aa0ba902b7"}
+      ]
+    },
+    {
+      "name": "http.server.active_requests",
+      "kind": "gauge",
+      "unit": "1",
+      "attributes": {"http.request.method": "GET"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 2
+    },
+    {
+      "name": "checkout.orders",
+      "kind": "counter",
+      "unit": "1",
+      "temporality": "cumulative",
+      "attributes": {"region": "eu"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 10
+    },
+    {
+      "name": "checkout.orders",
+      "kind": "counter",
+      "unit": "1",
+      "temporality": "cumulative",
+      "attributes": {"region": "eu"},
+      "timestamp": "2026-11-26T00:05:00Z",
+      "value": 12
+    }
+  ]
+}

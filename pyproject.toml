@@ -1,0 +1,55 @@
+# Baysöz Labs <baysozlabs@proton.me> — baysoz-metriccanon build configuration.
+
+[project]
+name = "baysoz-metriccanon"
+version = "1.0.0"
+description = "Baysöz Labs <baysozlabs@proton.me> — offline OpenTelemetry and Prometheus metric semantic-conformance oracle with deterministic SARIF CI gates"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { file = "LICENSE" }
+authors = [{ name = "Baysöz Labs", email = "baysozlabs@proton.me" }]
+keywords = [
+  "observability",
+  "opentelemetry",
+  "prometheus",
+  "semantic-conventions",
+  "sarif",
+  "ci-gate",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: System Administrators",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: System :: Monitoring",
+]
+
+[project.urls]
+Homepage = "https://github.com/yazilimbaysoz-svg/baysoz-metriccanon"
+Issues = "https://github.com/yazilimbaysoz-svg/baysoz-metriccanon/issues"
+
+[project.scripts]
+baysoz-metriccanon = "baysoz_metriccanon.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/baysoz_metriccanon"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "S", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

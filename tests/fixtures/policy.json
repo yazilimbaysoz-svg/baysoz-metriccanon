@@ -1,0 +1,8 @@
+{
+  "schema": "baysoz-metriccanon/policy-v1",
+  "attribution": "Baysöz Labs <baysozlabs@proton.me>",
+  "canonical_names": {"legacy.duration": "modern.duration"},
+  "canonical_attributes": {"legacy.key": "modern.key"},
+  "unit_aliases": {"furlong": "1"},
+  "prometheus_units": {"http_server_requests_seconds": "s"}
+}

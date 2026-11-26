@@ -1,0 +1,170 @@
+{
+  "schema": "baysoz-metriccanon/v1",
+  "attribution": "Baysöz Labs <baysozlabs@proton.me>",
+  "service": {"name": "checkout"},
+  "services": {"edge": {"deployment.environment": "prod"}},
+  "points": [
+    {
+      "name": "http.server.duration",
+      "kind": "histogram",
+      "unit": "s",
+      "attributes": {"http.method": "GET", "HTTP.METHOD": "GET"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "histogram": {"count": 3, "sum": 0.3, "bounds": [0.1], "bucket_counts": [1, 2]}
+    },
+    {
+      "name": "http.server.request.duration",
+      "kind": "histogram",
+      "unit": "s",
+      "attributes": {"http.request.method": "GET"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "histogram": {"count": 3, "sum": 0.3, "bounds": [0.1], "bucket_counts": [1, 2]}
+    },
+    {
+      "name": "http.server.request.duration",
+      "kind": "counter",
+      "unit": "By",
+      "service": "edge",
+      "temporality": "cumulative",
+      "attributes": {"http.request.method": "POST"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 5
+    },
+    {
+      "name": "checkout.orders",
+      "kind": "counter",
+      "unit": "1",
+      "temporality": "cumulative",
+      "attributes": {"region": "eu"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 10
+    },
+    {
+      "name": "checkout.orders",
+      "kind": "counter",
+      "unit": "1",
+      "temporality": "cumulative",
+      "attributes": {"region": "eu"},
+      "timestamp": "2026-11-26T00:05:00Z",
+      "value": 7
+    },
+    {
+      "name": "cache.entries",
+      "kind": "gauge",
+      "unit": "By",
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": NaN
+    },
+    {
+      "name": "rpc.duration",
+      "kind": "histogram",
+      "unit": "s",
+      "attributes": {"rpc.method": "Get"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "histogram": {
+        "count": 4,
+        "sum": 0.8,
+        "bounds": [0.2, 0.1, 0.1],
+        "bucket_counts": [1, -1, 2, 1]
+      },
+      "exemplars": [
+        {"trace_id": "deadbeef", "span_id": "0000000000000000"}
+      ]
+    },
+    {
+      "name": "batch.jobs",
+      "kind": "counter",
+      "unit": "1",
+      "temporality": "delta",
+      "attributes": {"job": "nightly"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": -3
+    },
+    {
+      "name": "telemetry.gauge",
+      "kind": "gauge",
+      "unit": "1",
+      "attributes": {"http.status_code": 200},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 1
+    },
+    {
+      "name": "telemetry.gauge",
+      "kind": "gauge",
+      "unit": "1",
+      "attributes": {"http.status_code": "200"},
+      "timestamp": "2026-11-26T00:01:00Z",
+      "value": 2
+    },
+    {
+      "name": "uptime",
+      "kind": "gauge",
+      "unit": "s",
+      "service": null,
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 42
+    },
+    {
+      "name": "audit.events",
+      "kind": "counter",
+      "unit": "1",
+      "temporality": "delta",
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 1
+    },
+    {
+      "name": "audit.events",
+      "kind": "counter",
+      "unit": "1",
+      "temporality": "delta",
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 1
+    },
+    {
+      "name": "HTTP.Requests",
+      "kind": "gauge",
+      "unit": "1",
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 1
+    },
+    {
+      "name": "weird.metric",
+      "kind": "gauge",
+      "unit": "furlong",
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 1
+    },
+    {
+      "name": "mixed.total",
+      "kind": "counter",
+      "unit": "1",
+      "temporality": "cumulative",
+      "attributes": {"origin": "a"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 1
+    },
+    {
+      "name": "mixed.total",
+      "kind": "counter",
+      "unit": "1",
+      "service": "edge",
+      "temporality": "delta",
+      "attributes": {"origin": "b"},
+      "timestamp": "2026-11-26T00:00:00Z",
+      "value": 2
+    },
+    {
+      "name": "legacy.latency",
+      "kind": "histogram",
+      "unit": "s",
+      "timestamp": "2026-11-26T00:00:00Z",
+      "histogram": {
+        "count": 1,
+        "sum": 0.1,
+        "bounds": [0.5],
+        "bucket_counts": [1],
+        "has_positive_inf": false
+      }
+    }
+  ]
+}

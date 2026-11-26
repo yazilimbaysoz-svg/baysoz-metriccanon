@@ -1,0 +1,10 @@
+# Baysöz Labs <baysozlabs@proton.me> — Prometheus exposition fixture.
+# HELP http_server_requests_seconds HTTP request duration
+# TYPE http_server_requests_seconds histogram
+http_server_requests_seconds_bucket{service="edge",le="0.1"} 1
+http_server_requests_seconds_bucket{service="edge",le="0.5"} 3
+http_server_requests_seconds_bucket{service="edge",le="+Inf"} 4
+http_server_requests_seconds_sum{service="edge"} 0.9
+http_server_requests_seconds_count{service="edge"} 4
+# TYPE checkout_orders_total counter
+checkout_orders_total{service="edge",region="eu"} 10
